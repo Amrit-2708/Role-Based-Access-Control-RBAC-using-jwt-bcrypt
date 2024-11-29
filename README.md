@@ -97,9 +97,9 @@
    npm run dev
    ```
    
-3. Server is already hosted on `https://rbac-server.vercel.app`
+3. Server is already hosted on `https://role-based-access-control-rbac-using-jwt-bcrypt.vercel.app`
 
 4. Since all new users who signs up are alloted the role as 'user', one can use the following credentials to log in as admin and change their account's role:
    ```bash
-   email: amrit@test.com
+   email: Amrit@test.com
    password: 54321
