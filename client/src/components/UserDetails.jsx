@@ -46,7 +46,7 @@ const UserDetails = () => {
         const fetchUser = async () => {
             setLoading(true);
             try {
-                const response = await axios.get(`http://localhost:3001/users/${id}`, {
+                const response = await axios.get(`https://role-based-access-control-rbac-using-jwt-bcrypt.vercel.app/users/${id}`, {
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}` 
                     }
@@ -101,7 +101,7 @@ const UserDetails = () => {
         }
         setIsLoading(true);
 
-        axios.patch(`http://localhost:3001/update/${id}`, { name, email, role, status }, {
+        axios.patch(`https://role-based-access-control-rbac-using-jwt-bcrypt.vercel.app/update/${id}`, { name, email, role, status }, {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}` 
             }

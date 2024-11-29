@@ -47,10 +47,10 @@ const Orgview = () => {
         const fetchUsers = async () => {
             setLoading(true);
             try {
-                const response = await axios.get("http://localhost:3001/users", {
+                const response = await axios.get("https://role-based-access-control-rbac-using-jwt-bcrypt.vercel.app/users", {
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}` // Add your Bearer token here
-                      }
+                    }
                 });
 
                 if (response.data.message === "Users retrieved successfully") {
@@ -58,7 +58,7 @@ const Orgview = () => {
                 }
                 setLoading(false);
             } catch (error) {
-                setError("Error fetching users"); 
+                setError("Error fetching users");
                 console.error("Error fetching users:", error);
                 setLoading(false);
             }
@@ -68,7 +68,7 @@ const Orgview = () => {
     }, []); // Empty dependency array to run only once when the component mounts
 
     function handleclick(userId) {
-        navigate(`/user/${userId}`, { state: { isAdmin } }); 
+        navigate(`/user/${userId}`, { state: { isAdmin } });
     }
 
     function handleaddUser() {
@@ -90,11 +90,11 @@ const Orgview = () => {
     return (
         <div className=''>
             <Navbar isAdmin={isAdmin} />
-            {loading && <div className='h-screen w-full flex justify-center items-center'> <Spinner color={"black"} width={"w-20"} marginRight='mr-0'/></div>}
-            {users.length >0 && (<div className='bordder-8 bg-cyan-900 flex justify-center'>
+            {loading && <div className='h-screen w-full flex justify-center items-center'> <Spinner color={"black"} width={"w-20"} marginRight='mr-0' /></div>}
+            {users.length > 0 && (<div className='bordder-8 bg-cyan-900 flex justify-center'>
                 <h1 className='text-5xl text-white font-bold mt-5 mb-5'>Welcome {localStorage.getItem("role")}</h1>
             </div>)}
-            {users.length>0 && (<div className='bg-cyan-900 flex justify-center pt-12 iteems-center h-screen'>
+            {users.length > 0 && (<div className='bg-cyan-900 flex justify-center pt-12 iteems-center h-screen'>
                 <div className="bg-pinnk-400 border-yellow-500 flex flex-col overflow-x-auto">
                     <div className="relative bg-red-d400 border-8d mb-2 flex flex-col sm:flex-row justify-between">
                         <input

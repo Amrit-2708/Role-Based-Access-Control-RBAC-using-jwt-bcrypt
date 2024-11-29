@@ -57,7 +57,7 @@ export default function Example() {
         const final_role = role.name;
         setLoading(true);
         axios
-            .post("http://localhost:3001/adduser", { name, email, final_role },{ headers: {
+            .post("https://role-based-access-control-rbac-using-jwt-bcrypt.vercel.app/adduser", { name, email, final_role },{ headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`
             }})
             .then((result) => {

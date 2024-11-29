@@ -22,7 +22,7 @@ const ChangePassword = () => {
     function handlePasswordChange(e) {
         e.preventDefault();
         setLoading(true);
-        axios.patch(`http://localhost:3001/change_password/${id}`,
+        axios.patch(`https://role-based-access-control-rbac-using-jwt-bcrypt.vercel.app/change_password/${id}`,
             { newPass },
             {
               headers: {

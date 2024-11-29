@@ -29,7 +29,7 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     axios
-      .post("http://localhost:3001/login", { email, password })
+      .post("https://role-based-access-control-rbac-using-jwt-bcrypt.vercel.app/login", { email, password })
       .then((result) => {
         console.log(result.data)
         toast.success(`${result.data.message}`, { autoClose: 2000 });

@@ -19,7 +19,7 @@ export default function Example({ id, closeDeleteModal }) {
     function handleDeleteUser(e) {
         e.preventDefault();
         axios
-            .delete(`http://localhost:3001/remove/${id}`, {
+            .delete(`https://role-based-access-control-rbac-using-jwt-bcrypt.vercel.app/remove/${id}`, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}` // Add your Bearer token here
                   }

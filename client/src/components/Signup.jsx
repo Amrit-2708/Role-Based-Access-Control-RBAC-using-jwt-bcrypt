@@ -25,7 +25,7 @@ const Signup = () => {
   function handleSubmit(e) {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/signup", { name, email, password })
+      .post("https://role-based-access-control-rbac-using-jwt-bcrypt.vercel.app/signup", { name, email, password })
       .then((result) => {
         toast.success(`${result.data.message}. Now Log In`)
         setTimeout(() => {
